@@ -1,14 +1,17 @@
 const removeFromArray = function(numsArr, numToRemove, ...moreNumstoRemove) {
 
     while(moreNumstoRemove.length > 0)
-    {
-        //let toRemove = moreNumstoRemove.pop();
+        {numsArr = removeFromArray(numsArr,moreNumstoRemove.pop());}
 
-        //if(typeof toRemove == Number)
-        numsArr = removeFromArray(numsArr,moreNumstoRemove.pop());
-    }
-    //const output = numsArr.filter( (num, index, ntr =numToRemove) => {num != ntr;});
     const output = [];
+    /*
+    output = numsArr.filter( (num, index, ntr = numToRemove) => 
+        {if(num === ntr)
+            {}
+        else
+            {output.push(num);}
+    );
+    */
 
     for(num of numsArr)
     {
